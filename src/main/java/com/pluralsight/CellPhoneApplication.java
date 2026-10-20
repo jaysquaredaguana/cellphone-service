@@ -47,10 +47,18 @@ public class CellPhoneApplication {
         System.out.print("Who is the owner of the phone? ");
         cellPhone2.setOwner(read.nextLine());
 
+        CellPhone cellPhone3 = new CellPhone(1111, "iphone", "mint",
+                "888-888-8888", "Remsey");
+
         display(cellPhone1);
         display(cellPhone2);
+        display(cellPhone3);
         cellPhone1.dial(cellPhone2.getPhoneNumber());
         cellPhone2.dial(cellPhone1.getPhoneNumber());
+        cellPhone1.dial(cellPhone3.getPhoneNumber());
+        cellPhone2.dial(cellPhone3.getPhoneNumber());
+        cellPhone3.dial(cellPhone1);
+        cellPhone3.dial(cellPhone2);
 
         read.close();
     }

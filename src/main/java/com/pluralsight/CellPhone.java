@@ -11,11 +11,21 @@ public class CellPhone {
 
     // Parameterless constructor
     public CellPhone() {
-        serialNumber = 0;
-        model = "";
-        carrier = "";
-        phoneNumber = "";
-        owner = "";
+        this.serialNumber = 0;
+        this.model = "";
+        this.carrier = "";
+        this.phoneNumber = "";
+        this.owner = "";
+    }
+
+    // Overloaded constructor with parameters for all properties
+    public CellPhone(int serialNumber, String model, String carrier,
+                     String phoneNumber, String owner) {
+        this.serialNumber = serialNumber;
+        this.model = model;
+        this.carrier = carrier;
+        this.phoneNumber = phoneNumber;
+        this.owner = owner;
     }
 
     // Getter and setter for serialNumber
@@ -65,5 +75,9 @@ public class CellPhone {
 
     public void dial(String phoneNumber) {
         System.out.printf("%s's phone is calling %s%n", getOwner(), phoneNumber);
+    }
+
+    public void dial(CellPhone phone) {
+        System.out.printf("%s's phone is calling %s%n", getOwner(), phone.getPhoneNumber());
     }
 }
